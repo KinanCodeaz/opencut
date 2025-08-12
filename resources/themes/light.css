@@ -1,0 +1,57 @@
+/* resources/themes/light.css */
+QWidget {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+QMenuBar {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+QMenu {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+QMenuBar::item:selected {
+    background-color: #d0d0d0;
+}
+
+QMenu::item:selected {
+    background-color: #d0d0d0;
+}
+
+QPushButton {
+    background-color: #d0d0d0;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #c0c0c0;
+}
+
+QListWidget {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c0c0c0;
+}
+
+QSlider::groove:horizontal {
+    background: #c0c0c0;
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #a0a0a0;
+    width: 16px;
+    margin: -4px 0;
+    border-radius: 8px;
+}
+
+QLabel {
+    color: #000000;
+}

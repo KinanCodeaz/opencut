@@ -1,0 +1,47 @@
+QWidget {
+    background-color: #e0f2e9;  /* أخضر فاتح */
+    color: #2e5d39;             /* أخضر داكن للنص */
+}
+
+QMenuBar, QMenu {
+    background-color: #a3d9a5;
+    color: #2e5d39;
+}
+
+QMenuBar::item:selected, QMenu::item:selected {
+    background-color: #8cc886;
+}
+
+QPushButton {
+    background-color: #8cc886;
+    color: #ffffff;
+    border: 1px solid #6ba866;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #6ba866;
+}
+
+QListWidget {
+    background-color: #c8e6c9;
+    color: #2e5d39;
+    border: 1px solid #8cc886;
+}
+
+QSlider::groove:horizontal {
+    background: #8cc886;
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: #6ba866;
+    width: 16px;
+    margin: -4px 0;
+    border-radius: 8px;
+}
+
+QLabel {
+    color: #2e5d39;
+}

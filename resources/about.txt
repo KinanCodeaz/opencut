@@ -1,0 +1,22 @@
+PyVideo Editor
+Version: 1.0.0
+License: Open Source (MIT)
+
+Description:
+A lightweight video editor built with PyQt5.
+Designed for simplicity and ease of use.
+
+Features:
+- Multi-language support
+- Multiple themes
+- Lightweight and resource-efficient
+- Support for various media formats
+- Timeline-based editing
+
+Developers:
+- [Your Name]
+- [Contributors]
+
+Contact:
+- Email: your.email@example.com
+- Website: https://yourwebsite.com
