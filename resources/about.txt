@@ -14,9 +14,9 @@ Features:
 - Timeline-based editing
 
 Developers:
-- [Your Name]
-- [Contributors]
+- KinanDev
+- Contributors
 
 Contact:
-- Email: your.email@example.com
-- Website: https://yourwebsite.com
+- Email: kinandev@yandex.com
+- Website: SOoon
