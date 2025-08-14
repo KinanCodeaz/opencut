@@ -16,6 +16,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("PyVideo Editor")
         self.setMinimumSize(1200, 800)
         
+        # إضافة أيقونة النافذة
+        self.setWindowIcon(QIcon("resources/icons/icons_soft.png"))
+        
         # نظام التاريخ للتراجع والإعادة
         self.history = []  # قائمة لتخزين العمليات
         self.history_index = -1  # مؤشر التاريخ
@@ -56,30 +59,37 @@ class MainWindow(QMainWindow):
         self.player_panel.setMinimumHeight(400)  # زيادة الحد الأدنى للارتفاع
         vertical_splitter.addWidget(self.player_panel)
         
-        # إضافة لوحة التايم لاين (في الأسفل) - زيادة الارتفاع قليلاً
-        self.timeline_panel = TimelinePanel()
-        self.timeline_panel.setMinimumHeight(180)  # زيادة الحد الأدنى للارتفاع
-        self.timeline_panel.setMaximumHeight(300)  # زيادة الحد الأقصى للارتفاع
-        vertical_splitter.addWidget(self.timeline_panel)
-        
         # إضافة التقسيم الرأسي إلى التقسيم الأفقي
         horizontal_splitter.addWidget(vertical_splitter)
         
         # إضافة التقسيم الأفقي إلى التخطيط الرئيسي
         main_layout.addWidget(horizontal_splitter)
         
+        # إضافة لوحة التايم لاين (في الأسفل) - جعلها قابلة للتمديد
+        self.timeline_panel = TimelinePanel()
+        self.timeline_panel.setMinimumHeight(180)  # زيادة الحد الأدنى للارتفاع
+        self.timeline_panel.setMaximumHeight(300)  # زيادة الحد الأقصى للارتفاع
+        main_layout.addWidget(self.timeline_panel)
+        
         # تعيين نسب التقسيم الأولية (تحسين توزيع المساحات)
         horizontal_splitter.setSizes([250, 950])  # 20% للميديا، 80% للباقي
         vertical_splitter.setSizes([650, 250])    # 72% للمشغل، 28% للتايم لاين (زيادة مساحة المشغل)
         
+        # الحصول على التيمات المتاحة
+        self.available_themes = self.get_available_themes()
+        
         # تطبيق الثيم المحفوظ أو الافتراضي
-        saved_theme = self.settings.value("theme", "Midnight Pro (Premiere Pro Style)")
-        self.apply_theme(saved_theme)
+        saved_theme = self.settings.value("theme", "Light Modern")
+        if saved_theme in self.available_themes:
+            self.apply_theme(saved_theme)
+        elif self.available_themes:
+            # إذا لم يكن الثيم المحفوظ موجوداً، استخدم أول ثيم متاح
+            self.apply_theme(self.available_themes[0])
     
     def closeEvent(self, event):
         """حفظ الإعدادات وحذف الصور المصغرة عند إغلاق البرنامج"""
         # حفظ التيم الحالي
-        current_theme = self.settings.value("theme", "Midnight Pro (Premiere Pro Style)")
+        current_theme = self.settings.value("theme", "Light Modern")
         self.settings.setValue("theme", current_theme)
         
         # حذف مجلد الصور المصغرة
@@ -93,14 +103,6 @@ class MainWindow(QMainWindow):
         
         event.accept()
     
-    def keyPressEvent(self, event):
-        """معالجة ضغطات المفاتيح"""
-        # ESC لإلغاء التحديد
-        if event.key() == Qt.Key_Escape:
-            self.cancel_selection()
-        
-        super().keyPressEvent(event)
-    
     def apply_theme(self, theme_name):
         """تطبيق الثيم المحدد على الواجهة"""
         theme_path = "resources/themes/all_themes.css"
@@ -108,29 +110,41 @@ class MainWindow(QMainWindow):
             with open(theme_path, "r") as f:
                 content = f.read()
             
-            # استخراج الثيم المحدد
-            start_marker = f"/* THEME: {theme_name} */"
-            start_index = content.find(start_marker)
+            # البحث عن الثيم المحدد (التنسيق الجديد)
+            start_marker1 = f"/*THEME: {theme_name}"
+            start_marker2 = f"/* THEME: {theme_name}"
+            
+            start_index = -1
+            if start_marker1 in content:
+                start_index = content.find(start_marker1)
+            elif start_marker2 in content:
+                start_index = content.find(start_marker2)
             
             if start_index == -1:
                 print(f"Theme '{theme_name}' not found")
                 return
             
-            # العثور على بداية الثيم التالي أو نهاية الملف
-            next_theme_index = content.find("/* THEME:", start_index + len(start_marker))
+            # البحث عن بداية الثيم التالي
+            next_theme_patterns = ["/*THEME:", "/* THEME:"]
+            next_theme_index = len(content)  # افتراضياً حتى نهاية الملف
             
-            if next_theme_index == -1:
-                theme_css = content[start_index + len(start_marker):].strip()
-            else:
-                theme_css = content[start_index + len(start_marker):next_theme_index].strip()
+            for pattern in next_theme_patterns:
+                pattern_index = content.find(pattern, start_index + 1)
+                if pattern_index != -1 and pattern_index < next_theme_index:
+                    next_theme_index = pattern_index
             
+            # استخراج CSS للثيم المحدد
+            theme_css = content[start_index:next_theme_index].strip()
+            
+            # تطبيق الثيم
             self.setStyleSheet(theme_css)
             self.statusBar().showMessage(f"Theme applied: {theme_name}", 2000)
-            
-            # حفظ الثيم المحدد
             self.settings.setValue("theme", theme_name)
+            
         except FileNotFoundError:
             print(f"Theme file not found: {theme_path}")
+        except Exception as e:
+            print(f"Error applying theme: {e}")
     
     def get_available_themes(self):
         """الحصول على قائمة بالتيمات المتاحة"""
@@ -140,30 +154,32 @@ class MainWindow(QMainWindow):
                 content = f.read()
             
             themes = []
-            start_index = 0
+            lines = content.split('\n')
             
-            while True:
-                # البحث عن بداية اسم الثيم
-                start_marker = "/* THEME: "
-                start_index = content.find(start_marker, start_index)
-                
-                if start_index == -1:
-                    break
-                
-                # استخراج اسم الثيم
-                end_index = content.find(" */", start_index)
-                if end_index == -1:
-                    break
-                
-                theme_name = content[start_index + len(start_marker):end_index].strip()
-                themes.append(theme_name)
-                
-                start_index = end_index + 1
+            for line in lines:
+                line = line.strip()
+                if line.startswith("/*THEME:") or line.startswith("/* THEME:"):
+                    # استخراج اسم الثيم
+                    if "*/" in line:
+                        theme_name = line.split("THEME:")[1].split("*/")[0].strip()
+                    else:
+                        theme_name = line.split("THEME:")[1].strip()
+                    
+                    if theme_name and theme_name not in themes:
+                        themes.append(theme_name)
             
             return themes
         except FileNotFoundError:
             print(f"Theme file not found: {theme_path}")
             return []
+    
+    def keyPressEvent(self, event):
+        """معالجة ضغطات المفاتيح"""
+        # ESC لإلغاء التحديد
+        if event.key() == Qt.Key_Escape:
+            self.cancel_selection()
+        
+        super().keyPressEvent(event)
     
     # نظام التاريخ للتراجع والإعادة
     def add_to_history(self, action_name, undo_func, redo_func):

@@ -1,89 +1,233 @@
-/* THEME: Midnight Pro (Premiere Pro Style) */
-QWidget { background-color: #0d0d0d; color: #e5e5e5; }
-QMenuBar, QMenu { background-color: #1a1a1a; color: #e5e5e5; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #2a2a2a; }
-QPushButton { background-color: #3a1f4d; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #5c2a80; }
-QSlider::groove:horizontal { background: #5c2a80; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #8e44ad; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Dark Blue*/
+QMainWindow {
+    background-color: #1e1e2f;
+    color: white;
+}
+QMenuBar {
+    background-color: #252540;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #3e3e6b;
+}
 
-/* THEME: Filmora Sky */
-QWidget { background-color: #eaf6ff; color: #00334d; }
-QMenuBar, QMenu { background-color: #cce6ff; color: #00334d; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #99ccff; }
-QPushButton { background-color: #3399ff; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #2673bf; }
-QSlider::groove:horizontal { background: #3399ff; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #80bfff; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Light Blue*/
+QMainWindow {
+    background-color: #e6f0ff;
+    color: #1a1a1a;
+}
+QMenuBar {
+    background-color: #b3d1ff;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #80b3ff;
+}
 
-/* THEME: Royal Green */
-QWidget { background-color: #f0f3e4; color: #2a3d23; }
-QMenuBar, QMenu { background-color: #d4e2c1; color: #2a3d23; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #b5c99a; }
-QPushButton { background-color: #4a7023; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #36531a; }
-QSlider::groove:horizontal { background: #4a7023; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #7bb661; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Dark Gray*/
+QMainWindow {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+}
+QMenuBar {
+    background-color: #3c3c3c;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #555555;
+}
 
-/* THEME: Ocean Blue */
-QWidget { background-color: #e0f7fa; color: #004d4d; }
-QMenuBar, QMenu { background-color: #b2ebf2; color: #004d4d; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #80deea; }
-QPushButton { background-color: #26a69a; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #1f7a73; }
-QSlider::groove:horizontal { background: #26a69a; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #4db6ac; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Light Gray*/
+QMainWindow {
+    background-color: #f2f2f2;
+    color: #1a1a1a;
+}
+QMenuBar {
+    background-color: #d9d9d9;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #bfbfbf;
+}
 
-/* THEME: Emerald Sand */
-QWidget { background-color: #faf3e0; color: #2f4f4f; }
-QMenuBar, QMenu { background-color: #f0e0c0; color: #2f4f4f; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #e6d3a4; }
-QPushButton { background-color: #2e8b57; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #236b43; }
-QSlider::groove:horizontal { background: #2e8b57; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #6abf8a; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Ocean Blue*/
+QMainWindow {
+    background-color: #00334d;
+    color: white;
+}
+QMenuBar {
+    background-color: #004d73;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #006699;
+}
 
-/* THEME: DaVinci Dark */
-QWidget { background-color: #1e1e1e; color: #dcdcdc; }
-QMenuBar, QMenu { background-color: #252526; color: #dcdcdc; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #333333; }
-QPushButton { background-color: #007acc; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #005999; }
-QSlider::groove:horizontal { background: #007acc; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #3399ff; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Sunset Orange*/
+QMainWindow {
+    background-color: #ff704d;
+    color: white;
+}
+QMenuBar {
+    background-color: #e65c33;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #cc471a;
+}
 
-/* THEME: Sunset Glow */
-QWidget { background-color: #fff2e6; color: #663300; }
-QMenuBar, QMenu { background-color: #ffd9b3; color: #663300; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #ffbf80; }
-QPushButton { background-color: #ff8000; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #cc6600; }
-QSlider::groove:horizontal { background: #ff8000; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #ffb366; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Forest Green*/
+QMainWindow {
+    background-color: #1f4d1f;
+    color: white;
+}
+QMenuBar {
+    background-color: #2e7d32;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #388e3c;
+}
 
-/* THEME: Silver Light */
-QWidget { background-color: #f5f5f5; color: #333333; }
-QMenuBar, QMenu { background-color: #e0e0e0; color: #333333; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #cccccc; }
-QPushButton { background-color: #999999; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #777777; }
-QSlider::groove:horizontal { background: #999999; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #bbbbbb; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Golden Yellow*/
+QMainWindow {
+    background-color: #ffcc00;
+    color: black;
+}
+QMenuBar {
+    background-color: #e6b800;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #cca300;
+}
 
-/* THEME: Forest Night */
-QWidget { background-color: #0b1d17; color: #d9ead3; }
-QMenuBar, QMenu { background-color: #1e3d32; color: #d9ead3; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #29543f; }
-QPushButton { background-color: #38755b; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #275241; }
-QSlider::groove:horizontal { background: #38755b; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #5ba17f; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Royal Purple*/
+QMainWindow {
+    background-color: #3d0066;
+    color: white;
+}
+QMenuBar {
+    background-color: #5c0099;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #8000cc;
+}
 
-/* THEME: Ice Mint */
-QWidget { background-color: #e6fff9; color: #004d40; }
-QMenuBar, QMenu { background-color: #b2fff0; color: #004d40; }
-QMenuBar::item:selected, QMenu::item:selected { background-color: #80ffe0; }
-QPushButton { background-color: #1de9b6; color: #ffffff; border-radius: 5px; padding: 6px; }
-QPushButton:hover { background-color: #14a37f; }
-QSlider::groove:horizontal { background: #1de9b6; height: 8px; border-radius: 4px; }
-QSlider::handle:horizontal { background: #80ffe0; width: 16px; margin: -4px 0; border-radius: 8px; }
+/*THEME: Pink Rose*/
+QMainWindow {
+    background-color: #ff99cc;
+    color: black;
+}
+QMenuBar {
+    background-color: #ff66b2;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #ff3399;
+}
+
+/*THEME: Ice Mint*/
+QMainWindow {
+    background-color: #ccfff5;
+    color: black;
+}
+QMenuBar {
+    background-color: #99ffe6;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #66ffd9;
+}
+
+/*THEME: Coffee Brown*/
+QMainWindow {
+    background-color: #4d3319;
+    color: white;
+}
+QMenuBar {
+    background-color: #663d1f;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #804d26;
+}
+
+/*THEME: Midnight Black*/
+QMainWindow {
+    background-color: #000000;
+    color: white;
+}
+QMenuBar {
+    background-color: #1a1a1a;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #333333;
+}
+
+/*THEME: Sky Light*/
+QMainWindow {
+    background-color: #ccf2ff;
+    color: black;
+}
+QMenuBar {
+    background-color: #99e6ff;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #66d9ff;
+}
+
+/*THEME: Ruby Red*/
+QMainWindow {
+    background-color: #800000;
+    color: white;
+}
+QMenuBar {
+    background-color: #990000;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #b30000;
+}
+
+/*THEME: Lavender Bliss*/
+QMainWindow {
+    background-color: #e6ccff;
+    color: black;
+}
+QMenuBar {
+    background-color: #d1b3ff;
+    color: black;
+}
+QMenuBar::item:selected {
+    background-color: #bb99ff;
+}
+
+/*THEME: Steel Gray*/
+QMainWindow {
+    background-color: #4d4d4d;
+    color: white;
+}
+QMenuBar {
+    background-color: #666666;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #808080;
+}
+
+/*THEME: Aqua Blue*/
+QMainWindow {
+    background-color: #0099cc;
+    color: white;
+}
+QMenuBar {
+    background-color: #00b3e6;
+    color: white;
+}
+QMenuBar::item:selected {
+    background-color: #00ccff;
+}

@@ -1,5 +1,6 @@
-PyVideo Editor
-Version: 1.0.0
+OpenCut Video Editor v1.0
+A lightweight video editor built with PyQt5
+Version: 1.0.0 Delta
 License: Open Source (MIT)
 
 Description:
@@ -7,15 +8,17 @@ A lightweight video editor built with PyQt5.
 Designed for simplicity and ease of use.
 
 Features:
-- Multi-language support
+- Media library with thumbnail generation
+- Video player with full controls
+- Timeline with multiple tracks
+- Drag and drop support
 - Multiple themes
-- Lightweight and resource-efficient
-- Support for various media formats
-- Timeline-based editing
+- Export functionality
 
 Developers:
-- KinanDev
+- Created by:KinanDev
 - Contributors
+-License: MIT
 
 Contact:
 - Email: kinandev@yandex.com

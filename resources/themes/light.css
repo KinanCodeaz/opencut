@@ -1,57 +1,80 @@
-/* resources/themes/light.css */
-QWidget {
-    background-color: #f0f0f0;
-    color: #000000;
+/* =============================
+   Light Modern Theme
+============================= */
+
+QMainWindow {
+    background-color: #f0f2f5;
 }
 
 QMenuBar {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
+    color: #333333;
+    font-weight: bold;
+    font-size: 13px;
+    spacing: 5px;
+}
+
+QMenuBar::item:selected {
+    background-color: #d0e4ff;
     color: #000000;
 }
 
 QMenu {
-    background-color: #e0e0e0;
-    color: #000000;
-}
-
-QMenuBar::item:selected {
-    background-color: #d0d0d0;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
 }
 
 QMenu::item:selected {
-    background-color: #d0d0d0;
+    background-color: #0078d7;
+    color: #ffffff;
 }
 
 QPushButton {
-    background-color: #d0d0d0;
-    color: #000000;
-    border: 1px solid #c0c0c0;
-    padding: 5px;
+    background-color: #0078d7;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #005a9e;
+    font-weight: bold;
 }
 
 QPushButton:hover {
-    background-color: #c0c0c0;
+    background-color: #005a9e;
+}
+
+QPushButton:pressed {
+    background-color: #004080;
 }
 
 QListWidget {
     background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #c0c0c0;
+    color: #333333;
+    border: 1px solid #cccccc;
+    selection-background-color: #0078d7;
+    selection-color: #ffffff;
 }
 
 QSlider::groove:horizontal {
-    background: #c0c0c0;
+    background: #d0d0d0;
     height: 8px;
     border-radius: 4px;
 }
 
 QSlider::handle:horizontal {
-    background: #a0a0a0;
-    width: 16px;
-    margin: -4px 0;
-    border-radius: 8px;
+    background: #0078d7;
+    width: 18px;
+    margin: -5px 0;
+    border-radius: 9px;
 }
 
 QLabel {
-    color: #000000;
+    color: #333333;
+    font-size: 12px;
+}
+
+QStatusBar {
+    background-color: #f0f2f5;
+    color: #333333;
+    border-top: 1px solid #cccccc;
 }

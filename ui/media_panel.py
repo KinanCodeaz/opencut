@@ -37,7 +37,7 @@ class ThumbnailThread(QThread):
             if file_ext in ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff']:
                 # للصور، قم بتغيير الحجم مباشرة
                 with Image.open(file_path) as img:
-                    img.thumbnail((100, 100))
+                    img.thumbnail((80, 80))
                     img.save(thumbnail_path, quality=95)
                 return thumbnail_path
             
@@ -49,7 +49,7 @@ class ThumbnailThread(QThread):
                     # تحويل من BGR إلى RGB
                     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                     img = Image.fromarray(frame)
-                    img.thumbnail((100, 100))
+                    img.thumbnail((80, 80))
                     img.save(thumbnail_path, quality=95)
                     cap.release()
                     return thumbnail_path
@@ -57,7 +57,7 @@ class ThumbnailThread(QThread):
             
             elif file_ext in ['.mp3', '.wav']:
                 # للصوت، أنشئ صورة مع اسم الملف
-                img = Image.new('RGB', (100, 100), color=(73, 109, 137))
+                img = Image.new('RGB', (80, 80), color=(73, 109, 137))
                 d = ImageDraw.Draw(img)
                 try:
                     font = ImageFont.truetype("arial.ttf", 12)
