@@ -51,15 +51,12 @@ We're currently in the **Delta development phase**, and we invite developers and
 
 ## 🖼 Screenshots
 
-> *(Add your screenshots to the `screenshots/` folder)*
-
+>
 ![Main Interface](screenshots/main.png)  
 *Main interface with Soft Purple theme*
 
 ![Themes](screenshots/themes.png)  
 *10 themes to suit all tastes and lighting conditions*
-
-> 💡 **Tip**: Add real screenshots to make the project more attractive!
 
 ---
 
